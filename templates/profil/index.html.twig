@@ -1,0 +1,338 @@
+{% extends 'layout.html.twig' %}
+{% block title %} post {% endblock %}
+{% block pop %}
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0); /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            border: 1px solid #888;
+            width: 40%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s
+        }
+
+        /* Add Animation */
+        @-webkit-keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+
+        @keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+
+        /* The Close Button */
+        .close {
+            color: white;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+
+        .modal-body {
+            padding: 2px 16px;
+        }
+
+
+        #myB, #myB2 {
+            color: black;
+        }
+
+        #myB:hover, #myB2:hover {
+            color: lightgray;
+        }
+
+        .column1 {
+            float: left;
+            width: 20%;
+            padding: 10px;
+        }
+
+        .column2 {
+            float: left;
+            width: 50%;
+        }
+
+        .column3 {
+            float: left;
+            width: 20%;
+            padding: 10px;
+        }
+
+        .row1 {
+            height: 20%;
+        }
+
+        .row1:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+
+    </style>
+{% endblock %}
+{% block main %}
+
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col" style=" text-align: right;font-size: large"><b>Followers</b></div>
+                    <div class="col">
+                        <div id="c1" class="close" style="color: black;">&times;
+                        </div>
+                    </div>
+                </div>
+
+                {% for f in follower %}
+                    <div class="row1">
+                        <div class="column1">
+                            <img src="{{ asset("upload/pdp/"~f.getAccount.pdp ) }}" alt="pdp"
+                                 class="list-item-image  rounded-circle" width="60" height="60"
+                                 style="object-fit: cover;">
+                        </div>
+                        <div class="column2">
+                            <a href="{{ path('app_profil',{'id':f.getAccount.id}) }}" class="nav-link"
+                               style="color: black">
+
+                                <h5>    {{ f.getAccount.username }}</h5>
+
+                                <h6>{{ f.getAccount.firstname  | capitalize }} {{ f.getAccount.name | capitalize }}</h6>
+                            </a>
+                        </div> {% if (app.user) %}
+                            {% if app.user.id!=f.getAccount.id %}
+                                <div class="column3">
+                                <a id="follow" class="btn btn-outline-danger"
+                                   href="{{ path("app_unfollows",{'id':f.getAccount.id}) }}">Following </a>
+                                </div>{% endif %}{% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal2" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col" style=" text-align: right;font-size: large"><b>Following</b></div>
+                    <div class="col">
+                        <div id="c2" class="close" style="color: black;">&times;</div>
+
+                    </div>
+                </div>
+                {% for f in following %}
+                    <div class="row1">
+                        <div class="column1">
+                            <img src="{{ asset("upload/pdp/"~f.getFollowing.pdp ) }}" alt="pdp"
+                                 class="list-item-image  rounded-circle" width="60" height="60"
+                                 style="object-fit: cover;">
+                        </div>
+                        <div class="column2">
+                            <a href="{{ path('app_profil',{'id':f.getFollowing.id}) }}" class="nav-link"
+                               style="color: black">
+
+                                <h5>    {{ f.getFollowing.username }}</h5>
+
+                                <h6>{{ f.getFollowing.firstname  | capitalize }} {{ f.getFollowing.name | capitalize }}</h6>
+                            </a>
+                        </div> {% if (app.user) %}
+                            {% if app.user.id!=f.getFollowing.id %}
+                                <div class="column3">
+                                <a id="follow" class="btn btn-outline-danger"
+                                   href="{{ path("app_unfollows",{'id':f.getFollowing.id}) }}">Following </a>
+                                </div>{% endif %}{% endif %}
+                    </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+    </div>
+    <div class="jumbotron border-round-0 min-50vh"
+         style="background-image:url({{ asset("upload/cover/"~profil.coverIm ) }});background-size: cover;">
+    </div>
+    <div class="container mb-4">
+        <img src="{{ asset("upload/pdp/"~profil.pdp ) }}" class="mt-neg100 mb-4 rounded-circle" alt="pdp" width="200"
+             height="200"
+             style="object-fit: cover;">
+
+        <div class="row">
+            <div class="col"><h1 class="font-weight-bold title" id="hj">{{ profil.firstname| capitalize }}
+                    &nbsp; {{ profil.name | capitalize }}  </h1><h4
+                        class="font-weight-bold title">{{ profil.username }} </h4></div>
+
+
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <a class="nav-link" id="myB"><h2>   {{ follower|length }} Followers</h2></a></div>
+                    <div class="col"><a class="nav-link" id="myB2"><h2>{{ following|length }} Following</h2></a></div>
+
+                </div>
+                <div class="row">
+                    {% if not(app.user) %}
+                        <div class="col">
+                            <a class="btn btn-danger" href=""> <i class="bi bi-flag"></i> &nbsp;&nbsp; Report </a></div>
+                    {% else %}
+                        {% if app.user.username!=profil.username %}
+                            {% if fforf %}
+                                <div class="col">
+                                    <a id="follow" class="btn btn-outline-danger"
+                                       href="{{ path("app_unfollow",{'id':profil.id}) }}"> <span
+                                                id="fl">Following</span> </a></div>
+                            {% else %}
+                                <div class="col"><a id="follow" class="btn btn-danger"
+                                                    href="{{ path("app_follow",{'id':profil.id}) }}"><i
+                                                class="bi bi-person-plus"></i>&nbsp;&nbsp; <span id="fl">Follow</span>
+                                    </a></div>
+                            {% endif %}
+                            <div class="col"><a class="btn btn-danger" href=""> <i class="bi bi-flag"></i>Report </a>
+                            </div>
+                        {% else %}
+                            <div class="col"><a id="follow" class="btn btn-outline-danger"
+                                                href="{{ path("app_setting",{'id':profil.id}) }}"><i
+                                            class="bi bi-toggles"></i>&nbsp;Edit Profil </a>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <p>
+            {{ profil.bio | capitalize }}
+        </p>
+    </div>
+    <div class="container-fluid mb-5">
+        <div class="row">
+            <div class="card-columns">
+                {% for p in post %}<a href="{{ path('app_post',{'id': p.id}) }}">
+                    <div class="card card-pin">
+                        <img class="card-img"
+                             src="{{ asset("upload/"~p.imageURL ) }}"
+                             alt="Card image">
+                        {#                        <div class="overlay"> #}
+                        {#                            <h2 class="card-title title">{{ p.Title }}</h2> #}
+                        {#                            <div class="more"> #}
+
+                        {#                                    <i class="fa fa-arrow-circle-o-right" ></i> More #}
+                        {#                            </div> #}
+                        {#                        </div> #}
+                    </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <script>
+        // Get the modal
+        modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        btn = document.getElementById("myB");
+
+        // Get the <span> element that closes the modal
+        span = document.getElementById("c1");
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+        modal2 = document.getElementById("myModal2");
+
+        // Get the button that opens the modal
+        btn2 = document.getElementById("myB2");
+
+        // Get the <span> element that closes the modal
+        span2 = document.getElementById("c2");
+
+        // When the user clicks the button, open the modal
+        btn2.onclick = function () {
+            modal2.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span2.onclick = function () {
+            modal2.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target === modal2) {
+                modal2.style.display = "none";
+            }
+        }
+
+
+    </script>
+
+{% endblock %}

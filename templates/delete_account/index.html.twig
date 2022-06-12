@@ -1,0 +1,40 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block signlog %} {% endblock %}
+
+
+
+{% block main %}
+
+
+
+    <section class="vh-100" style="background-color:#ebebeb;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card shadow-2-strong"
+                         style="border-radius: 1rem;box-shadow: 0  15px 20px 0  rgba(0, 0, 0, 0.5);">
+                        <div class="card-body p-5 text-center" style=" ">
+
+                            <div class="text-center">
+
+                                <h5>Are you sure that you want to delete your account permanently? <br>There's no coming
+                                    back.</h5>
+                                <div class="row">
+                                    <div class="col">
+                                        <a href="{{ path('app_delete_account') }}">Yes?</a></div>
+                                    <div class="col">
+                                        <a href="{{ path('app_setting',{'id':app.user.id}) }}">No!</a></div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

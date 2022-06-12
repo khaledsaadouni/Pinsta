@@ -1,0 +1,81 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block signlog %} {% endblock %}
+
+
+
+{% block main %}
+
+
+
+    <section class="vh-100" style="background-color:#ebebeb;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card shadow-2-strong"
+                         style="border-radius: 1rem;box-shadow: 0  15px 20px 0  rgba(0, 0, 0, 0.5);">
+                        <div class="card-body p-5 text-center" style=" ">
+
+                            <div class="text-center">
+                                <img alt="pfp" src="{{ asset('img/logo.png') }}">
+                                <h4 class="mt-1 mb-5 pb-1">Pinsta</h4>
+                            </div>
+
+                            <form method="post">
+                                {% if error %}
+                                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                                {% endif %}
+
+                                {% if app.user %}
+                                    <div class="mb-3">
+                                        You are logged in as {{ app.user.userIdentifier }}, <a
+                                                href="{{ path('app_logout') }}">Logout</a>
+                                    </div>
+                                {% endif %}
+                                <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+
+                                <div class="form-outline mb-4">
+                                    <label for="inputUsername">Username</label>
+                                    <input type="text" value="{{ last_username }}" name="username" id="inputUsername"
+                                           class="form-control" autocomplete="username" required autofocus>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <label for="inputPassword">Password</label>
+                                    <input type="password" name="password" id="inputPassword" class="form-control"
+                                           autocomplete="current-password" required>
+                                </div>
+
+                                <div class="checkbox mb-3">
+                                    <label>
+                                        <input type="checkbox" name="_remember_me"> Remember me
+                                    </label>
+                                </div>
+
+                                <div class="text-center pt-1 mb-5 pb-1">
+                                    <button class="btn btn-primary btn-block  fa-lg  mb-3" type="submit">Log
+                                        in
+                                    </button>
+                                    <a class="text-muted" href=" ">Forgot password?</a>
+                                </div>
+
+                                <input type="hidden" name="_csrf_token"
+                                       value="{{ csrf_token('authenticate') }}"
+                                >
+                                <div class="d-flex align-items-center justify-content-center pb-4">
+                                    <p class="mb-0 me-2">Don't have an account?</p> &nbsp;&nbsp;
+                                    <a type="button" class="btn btn-outline-danger" href="{{ path('app_register') }}">Create
+                                        new</a>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

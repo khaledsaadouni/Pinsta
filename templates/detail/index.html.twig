@@ -1,0 +1,243 @@
+{% extends 'layout.html.twig' %}
+{% block title %} post {% endblock %}
+{% block pop %}
+    <style>
+        .card10 {
+
+            border: none;
+            box-shadow: 5px 6px 6px 2px #e9ecef;
+            border-radius: 4px;
+        }
+
+
+        .icons i {
+
+            margin-left: 8px;
+        }
+
+        .reply {
+
+            margin-left: 12px;
+        }
+
+        .reply small {
+
+            color: #b7b4b4;
+
+        }
+
+
+        .reply small:hover {
+
+            color: green;
+            cursor: pointer;
+
+        }</style>
+{% endblock %}
+{% block main %}
+
+
+    <section class="bg-gray200 pt-5 pb-5">
+
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div>
+                    <div class="card">
+                        <div class="row">
+                            <div class="col" style="background: #eee">
+                                <img class="center card-img-top mb-2" src="{{ asset("upload/"~post.imageURL ) }}"
+                                     style="box-shadow: 0 15px 15px 0 " alt="Card image"></div>
+                            <div class="col">
+                                <a href="{{ path("app_profil",{'id':post.author.id}) }}" class="nav-link"><h1
+                                            class="card-title display-4"><img alt="pfp" class="rounded-circle mr-2"
+                                                                              src="{{ asset("upload/pdp/"~post.author.pdp ) }}"
+                                                                              width="80" height="80"
+                                                                              style="object-fit: cover;">{{ post.author.username }}
+                                    </h1></a>
+                                <h3 class="card-title display-4"> {{ post.Title }}</h3>
+                                {{ post.Description }}
+
+                                <br> <br>
+                                <div class="row">
+                                    <div class="col"
+                                         style="font-size: x-large;color: black"> {% if likes %}  {{ likes | length }} {% endif %}
+                                        &nbsp;&nbsp; {% if not(check) %}<a class=" btn btn-danger"
+                                                                           href="{{ path('app_like',{'id':post.id}) }}">
+                                                &nbsp;&nbsp;&nbsp;<i class="bi bi-heart"></i>&nbsp;&nbsp;Like&nbsp;&nbsp;
+                                            </a>{% else %}<a class=" btn btn-outline-danger"
+                                                             href="{{ path('app_unlike',{'id':post.id}) }} "> &nbsp;&nbsp;&nbsp;<i
+                                                        class="bi bi-heart"></i>&nbsp;&nbsp;Unlike&nbsp;&nbsp;
+                                            </a>{% endif %}</div>
+                                    <div class="col"><a href="{{ path("app_home") }}" class=" btn btn-danger">&nbsp;&nbsp;<i
+                                                    class="bi bi-share"></i>&nbsp;&nbsp;Share&nbsp;&nbsp; </a></div>
+                                </div>
+                                <br>
+
+                                <div style="border-top:solid ;border-top-color: lightgrey;border-top-width: medium">
+                                    <!-- Begin Comments -replace demowebsite with your own id
+                                    ================================================== -->
+
+                                    {% for c in comments %}
+                                        <div class="card10 p-3">
+
+                                            <div class="d-flex justify-content-between align-items-center">
+
+                                                <div class="user d-flex flex-row align-items-center">
+                                                    <img alt="pfp" class="rounded-circle mr-2"
+                                                         src="{{ asset("upload/pdp/"~c.author.pdp ) }}" width="40"
+                                                         height="40" style="object-fit: cover;">
+
+                                                    <span><small
+                                                                class="font-weight-bold text-primary"> {{ c.author.username }}</small> <small
+                                                                class="font-weight-bold">{{ c.Comment }}</small></span>
+
+                                                </div>
+
+
+                                            </div>
+
+
+                                            <div class="action d-flex justify-content-between mt-2 align-items-center">
+
+                                                <div class="reply px-4">
+                                                    {% if app.user %}
+                                                        {% if (app.user.id==c.author.id)or(app.user.id==post.author.id) %}
+                                                            <a class="nav-link"
+                                                               href="{{ path('app_uncomment',{'id':post.id,'us':c.author.id}) }}">Remove</a>
+                                                        {% endif %}
+                                                    {% endif %}
+                                                </div>
+
+
+                                            </div>
+
+
+                                        </div>
+
+                                    {% endfor %}
+
+
+                                    <div class="card10 p-3">
+
+                                        <div class="d-flex justify-content-between align-items-center">
+
+                                            <div class="user d-flex flex-row align-items-center">
+
+                                                {{ form_start(comment) }}
+
+                                                <div style="width:80%;float: left">
+                                                    {{ form_widget(comment.Comment) }}
+                                                </div>
+                                                <div style="width: 10%;float: right">
+                                                    {{ form_rest(comment) }}
+                                                </div>
+
+
+                                            </div>
+
+
+                                        </div>
+
+
+                                    </div>
+
+
+                                    {#                                <div id="comments" class="mt-4"> #}
+
+
+                                    {#                                    #}
+                                    {#                                            <div class="row" id="comsec"> #}
+
+                                    {#                                                <div class="col"> #}
+                                    {#                                                    <div class="media g-mb-30 media-comment"> #}
+                                    {#                                                        <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15" #}
+                                    {#                                                             src="{{ asset('upload/pdp/'~c.author.pdp) }}" #}
+                                    {#                                                             alt="Image Description"> #}
+                                    {#                                                        <div class="media-body u-shadow-v18 g-bg-secondary g-pa-30"> #}
+                                    {#                                                            <div class="g-mb-15"> #}
+                                    {#                                                                <h5 class="h5 g-color-gray-dark-v1 mb-0">{{ c.author.username }}</h5> #}
+                                    {#                                                                <span class="g-color-gray-dark-v4 g-font-size-12">5 days ago</span> #}
+                                    {#                                                            </div> #}
+
+                                    {#                                                            <p>{{ c.Comment }}</p> #}
+
+
+                                    {#                                                        </div> #}
+                                    {#                                                    </div> #}
+                                    {#                                                </div> #}
+                                    {#                                            </div> #}
+                                    {# #}
+                                    {#                                        <div class="col-md-8"> #}
+                                    {#                                            <div class="media g-mb-30 media-comment"> #}
+                                    {#                                                {% if app.user %} #}
+                                    {#                                                    <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15" #}
+                                    {#                                                         src="{{ asset('upload/pdp/'~app.user.pdp) }}" #}
+                                    {#                                                         alt="Image Description"> #}
+                                    {#                                                {% endif %} #}
+                                    {#                                                <div> #}
+
+                                    {#                                                    #}{#                                                            <input id="comtxt" style="width: border-box" class="form-control"></input> #}
+                                    {#                                                    {{ form(comment) }} #}
+                                    {#                                                    <ul class="list-inline d-sm-flex my-0"> #}
+                                    {#                                                        <li class="list-inline-item ml-auto"> #}
+                                    {#                                                            <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" #}
+                                    {#                                                               id="com" href="#!"> #}
+                                    {#                                                                <i class="fa fa-reply g-pos-rel g-top-1 g-mr-3"></i> #}
+                                    {#                                                                Comment #}
+                                    {#                                                            </a> #}
+                                    {#                                                        </li> #}
+                                    {#                                                    </ul> #}
+                                    {#                                                </div> #}
+                                    {#                                            </div> #}
+                                    {#                                        </div> #}
+                                    {#                                    </div> #}
+                                    {#                                </div> #}
+
+
+                                    <div id="disqus_thread">
+                                    </div>
+
+                                </div>
+                                <!--End Comments
+                                ================================================== -->
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid mt-5">
+            <div class="row">
+                <h5 class="font-weight-bold">More like this</h5>
+                <div class="card-columns">
+
+                    {% if postCat %}
+                        {% for p in postCat %}
+                            <div class="card card-pin">
+                                <a href="{{ path('app_post',{'id': p.id}) }}"> <img class="card-img"
+                                                                                    src="{{ asset("upload/"~p.imageURL ) }}"
+                                                                                    alt="Card image"> </a>
+                                {#                        <div class="overlay"> #}
+                                {#                            <h2 class="card-title title">{{ p.Title }}</h2> #}
+                                {#                            <div class="more"> #}
+
+                                {#                                    <i class="fa fa-arrow-circle-o-right" ></i> More #}
+                                {#                            </div> #}
+                                {#                        </div> #}
+                                <div class="card-body">
+                                    <a href="{{ path("app_profil",{'id':p.author.id}) }}"><p class="card-text"><img
+                                                    alt="pfp" class="rounded-circle mr-2"
+                                                    src="{{ asset("upload/pdp/"~p.author.pdp ) }}" width="50"
+                                                    height="50" style="object-fit: cover;"><span
+                                                    class="align-middle">{{ p.author.username }}</span></p></a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

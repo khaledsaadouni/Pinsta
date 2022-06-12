@@ -1,0 +1,28 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %} Pinsta {% endblock %}
+{% block main %}
+    <section class="mt-4 mb-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="card-columns">
+                    {% for p in posts %}
+                        <div class="card card-pin">
+                            <a href="{{ path('app_post',{'id': p.id}) }}"> <img class="card-img"
+                                                                                src="{{ asset("upload/"~p.imageURL ) }}"
+                                                                                alt="Card image"> </a>
+                            <div class="card-body">
+                                <a href="{{ path("app_profil",{'id':p.author.id}) }}"><p class="card-text"><img
+                                                class="rounded-circle mr-2" alt="pfp"
+                                                src="{{ asset("upload/pdp/"~p.author.pdp ) }}" width="50" height="50"
+                                                style="object-fit: cover;"><span
+                                                class="align-middle">{{ p.author.username }}</span></p></a>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

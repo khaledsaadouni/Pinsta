@@ -1,0 +1,57 @@
+{% extends 'layout.html.twig' %}
+{% block title %} post {% endblock %}
+{% block main %}
+    {{ form_start(form) }}
+    <div class="container">
+        <div class="row gutters" style="border-radius: 1rem;box-shadow: 0  15px 20px 0  rgba(0, 0, 0, 0.5);">
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="account-settings">
+                            <div class="user-profile">
+                                <div class="user-avatar">
+                                    <br><br><br><br> <br><br><br><br>
+                                    <img alt="pfp" src="{{ asset("upload/pdp/"~app.user.pdp ) }}"
+                                         class="mt-neg100 mb-4 rounded-circle" width="200" height="200"
+                                         style="object-fit: cover;">
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                <div class="card h-100">
+                    <div class="card-body">
+
+
+                        <h6 class="mb-2 text-primary"><i class="bi bi-key"></i> Password Reset</h6> <br>
+                        <div class="form-outline mb-4">
+                            <label for="inputUsername" style="color: black;font-size: large;">
+                                New {{ form_label(form.Password) }}:</label>
+                            <span id="txtPassword">{{ form_widget(form.Password) }}</span></div>
+                        <div class="form-outline mb-4"><label>
+                                <input type="checkbox" onclick="Toggle()">
+                            </label>
+                            <b>Show Password</b></div>
+                        <div class="form-outline mb-4"><span id="submit">{{ form_row(form.submit) }}</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Change the type of input to password or text
+        function Toggle() {
+            let temp = document.getElementById('txtPassword').childNodes[0];
+            if (temp.type === "password") {
+                temp.type = "text";
+            } else {
+                temp.type = "password";
+            }
+        }
+
+    </script>
+{% endblock %}

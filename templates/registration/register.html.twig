@@ -1,0 +1,96 @@
+{# {% extends 'base.html.twig' %} #}
+
+{# {% block title %}Register{% endblock %} #}
+
+{# {% block body %} #}
+{#    <h1>Register</h1> #}
+
+{#   #}
+{#        {{ form_row(registrationForm.username) }} #}
+{#    {{ form_row(registrationForm.email) }} #}
+{#        {{ form_row(registrationForm.Password, #}{# } #}
+{#            label: 'Password' #}
+{#        }) }} #}
+{#        {{ form_row(registrationForm.agreeTerms) }} #}
+{# {{ form_rest(registrationForm) }} #}
+{#       #}
+{#    {{ form_end(registrationForm) }} #}
+{# {% endblock %} #}
+{% extends 'layout.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block signlog %} {% endblock %}
+
+
+
+{% block main %}
+
+    <!-- Section: Design Block -->
+    <section class="">
+        <!-- Jumbotron -->
+        <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%); ">
+            <div class="container">
+                <div class="row gx-lg-5 align-items-center">
+                    <div class="col-lg-6 mb-5 mb-lg-0">
+                        <h1 class="my-5 display-3 fw-bold ls-tight" style="color: #bf0000 ">
+                            Pinsta
+
+                        </h1>
+                        <p style="color: hsl(217, 10%, 50.8%)">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Eveniet, itaque accusantium odio, soluta, corrupti aliquam
+                            quibusdam tempora at cupiditate quis eum maiores libero
+                            veritatis? Dicta facilis sint aliquid ipsum atque?
+                        </p>
+                    </div>
+
+                    <div class="col-lg-6 mb-5 mb-lg-0">
+                        <div class="card">
+                            <div class="card-body py-5 px-md-5" style="box-shadow: 0  15px 20px 0  rgba(0, 0, 0, 0.5);">
+                                {{ form_start(form) }}
+                                <div class="form-outline mb-4">
+                                    <label for="inputUsername" style="color: black;font-size: large;">
+                                        {{ form_label(form.Username) }}:</label>
+                                    {{ form_widget(form.Username) }}</div>
+                                <div class="form-outline mb-4">
+                                    <label for="inputUsername" style="color: black;font-size: large;">
+                                        {{ form_label(form.Password) }}:</label>
+                                    {{ form_widget(form.Password) }}</div>
+
+                                <div class="form-outline mb-4">
+                                    <label for="inputUsername"
+                                           style="color: black;font-size: large;">   {{ form_label(form.Email) }}
+                                        :</label>
+                                    {{ form_widget(form.Email) }}</div>
+                                <div class="form-outline mb-4">
+                                    <label for="inputUsername"
+                                           style="color: black;font-size: large;">   {{ form_label(form.Name) }}
+                                        :</label>
+                                    {{ form_widget(form.Name) }}</div>
+                                <div class="form-outline mb-4">
+                                    <label for="inputUsername"
+                                           style="color: black;font-size: large;">  {{ form_label(form.Firstname) }}
+                                        :</label>
+                                    {{ form_widget(form.Firstname) }}</div>
+                                <div class="form-outline mb-4">
+                                    <label for="inputUsername"
+                                           style="color: black;font-size: large;">     {{ form_label(form.Country) }}
+                                        :</label><br>
+                                    {{ form_widget(form.Country) }}</div>
+                                {{ form_rest(form) }}
+                                <div class="form-outline mb-4">
+                                    <button type="submit" class="btn">Register</button>
+                                </div>
+                            </div>
+
+                            {{ form_end(form) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Jumbotron -->
+    </section>
+    <!-- Section: Design Block -->
+{% endblock %}

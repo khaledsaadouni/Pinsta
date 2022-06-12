@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %} {% endblock %}</title>
+    <script type="text/javascript"> (function () {
+            var css = document.createElement('link');
+            css.href = 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';
+            css.rel = 'stylesheet';
+            css.type = 'text/css';
+            document.getElementsByTagName('head')[0].appendChild(css);
+        })(); </script>
+    <link href="{{ asset('css/font/bootstrap-icons.css') }}" rel="stylesheet"/>
+    <link rel="stylesheet" href="{{ asset('css/popup.css') }}">
+    {#    <link rel="stylesheet" href="{{ asset('css/log.css') }}"> #}
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/2.css') }}">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    {% block pop %}
+    {% endblock %}
+</head>
+
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+    {% block nav %}
+        <a class="navbar-brand font-weight-bolder mr-3" href="{{ path('app_home') }}"><img
+                    src="{{ asset('img/logo.png') }}"></a>
+        <button class="navbar-light navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault"
+                aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsDefault">
+            <ul class="navbar-nav mr-auto align-items-center">
+                <form class="bd-search hidden-sm-down">
+                    <input type="text" style="width: 450px" class="form-control bg-graylight border-0 font-weight-bold"
+                           id="search-input" placeholder="Search..." autocomplete="off">
+                    <div class="dropdown-menu bd-search-results" id="search-results">
+                    </div>
+                </form>
+            </ul>
+            <ul class="navbar-nav" STYLE="text-align: left">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_category',{'name':'Lifestyle'}) }}">Lifestyle</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_category',{'name':'Food'}) }}">Food</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_category',{'name':'Home'}) }}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_category',{'name':'Travel'}) }}">Travel</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">More</a>
+                    <div class="dropdown-menu shadow-lg" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="{{ path('app_category',{'name':'Astronomy'}) }}">Astronomy</a>
+                        <a class="dropdown-item" href="{{ path('app_category',{'name':'Nature'}) }}">Nature</a>
+                        <a class="dropdown-item" href="{{ path('app_category',{'name':'Cooking'}) }}">Cooking</a>
+                        <a class="dropdown-item" href="{{ path('app_category',{'name':'Fashion'}) }}">Fashion</a>
+                        <a class="dropdown-item" href="{{ path('app_category',{'name':'Cars'}) }}">Cars</a>
+                    </div>
+                </li>
+
+            </ul>
+            &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+            <ul class="navbar-nav ml-auto align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_home') }}">About Us &nbsp; &nbsp;</a></li>
+                {% if not(app.user) %}
+                    <div class="row">
+                        <div class="col">
+                            <a class=" btn btn-outline-danger" href="{{ path('app_login') }}" style="color: #a80000 ">
+                                Login </a></div>
+                        <div class="col">
+                            <a class=" btn btn-danger" href="{{ path('app_register') }}" style="color: white">sign up</a>
+                        </div>
+                    </div>
+                {% else %}
+
+
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path("app_profil",{'id':app.user.id}) }}"><img
+                                    class="rounded-circle mr-2" src="{{ asset("upload/pdp/"~app.user.pdp ) }}"
+                                    width="50" height="50" style="object-fit: cover;"><span
+                                    class="align-middle">{{ app.user.firstname }}</span></a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true"
+                           aria-expanded="false">
+                            <svg style="margin-top:10px;" class="_3DJPT" version="1.1" viewbox="0 0 32 32" width="21"
+                                 height="21" aria-hidden="false" data-reactid="71">
+                                <path d="M7 15.5c0 1.9-1.6 3.5-3.5 3.5s-3.5-1.6-3.5-3.5 1.6-3.5 3.5-3.5 3.5 1.6 3.5 3.5zm21.5-3.5c-1.9 0-3.5 1.6-3.5 3.5s1.6 3.5 3.5 3.5 3.5-1.6 3.5-3.5-1.6-3.5-3.5-3.5zm-12.5 0c-1.9 0-3.5 1.6-3.5 3.5s1.6 3.5 3.5 3.5 3.5-1.6 3.5-3.5-1.6-3.5-3.5-3.5z"
+                                      data-reactid="22"></path>
+                            </svg>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right shadow-lg" aria-labelledby="dropdown02">
+                            <div class="row ">
+                                &nbsp;&nbsp;<a href="{{ path("app_setting",{'id':app.user.id}) }}" id="set"
+                                               class="nav-link" style="color: darkgray"><h6> Settings &nbsp; <i
+                                                class="bi bi-sliders"></i></h6></a></div>
+                            <div class="dropdown-divider">
+                            </div>
+                            <span class="dropdown-item"><a href="{{ path("app_logout") }}"
+                                                           class="btn btn-primary d-block">Log Out</a></span>
+                        </div>
+                    </li>{% endif %}
+    </ul>
+
+    </div>
+
+        {% block button %}
+            {% if (app.user) %}
+                <div class="floating-container">
+                    <a href="{{ path('app_new') }}">
+                        <div class="floating-button">+</div>
+                    </a>
+                    {#        <div class="element-container"> #}
+
+                    {#     <span class="float-element tooltip-left"> #}
+                    {#     <i class="bi bi-inbox"></i> #}
+                    {#    </span> #}
+                    {#       <span class="float-element"><i class="bi bi-image"></i> #}
+                    {#    </span> #}
+
+                    {#        </div> #}
+
+                </div>
+            {% endif %}
+        {% endblock %}
+    {% endblock %}
+
+</nav>
+<main role="main">
+
+    {% for v in app.session.flashbag.get('welcome') %}
+        <div class="alert-info"> {{ v }}</div>
+    {% endfor %}
+    {% for flashMessage in app.session.flashbag.get('error') %}
+        <div class="alert alert-danger">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        <div class="alert alert-success">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+    {% for flashMessage in app.session.flashbag.get('info') %}
+        <div class="alert alert-info">
+        {{ flashMessage }}
+        </div>{% endfor %}
+    {% block main %}
+
+    {% endblock %}
+</main>
+
+
+<script src="{{ asset('js/pop2.js') }}"></script>
+<script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ asset('js/theme.js') }}"></script>
+<script>
+
+    function myFunction() {
+        var x = document.getElementById("sign_password");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+
+    <script src="{{ asset('js/click.js') }}"></script>
+<footer class="footer pt-5 pb-5 text-center">
+    {% block footer %}
+        <div class="container">
+            <p>© <span class="credits font-weight-bold">
+            <a target="_blank" class="text-dark" href=""><u>Pinsta</u>  By Khaled Saadouni </a>
+          </span>
+            </p>
+        </div>
+    {% endblock %}
+</footer>
+</body>
+
+</html>
+

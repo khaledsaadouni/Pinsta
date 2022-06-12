@@ -1,20 +1,20 @@
 {
-  "_readme": [
-    "This file locks the dependencies of your project to a known state",
-    "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
-    "This file is @generated automatically"
-  ],
-  "content-hash": "262cdf12353c6baf2cddd3a3a0abaf30",
-  "packages": [
-    {
-      "name": "doctrine/annotations",
-      "version": "1.13.2",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/doctrine/annotations.git",
-        "reference": "5b668aef16090008790395c02c893b1ba13f7e08"
-      },
-      "dist": {
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "1a366c89a45dcda458799f428aae24cc",
+    "packages": [
+        {
+            "name": "doctrine/annotations",
+            "version": "1.13.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/annotations.git",
+                "reference": "5b668aef16090008790395c02c893b1ba13f7e08"
+            },
+            "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/doctrine/annotations/zipball/5b668aef16090008790395c02c893b1ba13f7e08",
                 "reference": "5b668aef16090008790395c02c893b1ba13f7e08",
@@ -2233,6 +2233,32 @@
                 "source": "https://github.com/sensiolabs/SensioFrameworkExtraBundle/tree/v6.2.6"
             },
             "time": "2022-01-14T11:51:13+00:00"
+        },
+        {
+            "name": "symfony/apache-pack",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/apache-pack.git",
+                "reference": "3aa5818d73ad2551281fc58a75afd9ca82622e6c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/apache-pack/zipball/3aa5818d73ad2551281fc58a75afd9ca82622e6c",
+                "reference": "3aa5818d73ad2551281fc58a75afd9ca82622e6c",
+                "shasum": ""
+            },
+            "type": "symfony-pack",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A pack for Apache support in Symfony",
+            "support": {
+                "issues": "https://github.com/symfony/apache-pack/issues",
+                "source": "https://github.com/symfony/apache-pack/tree/master"
+            },
+            "time": "2017-12-12T01:46:35+00:00"
         },
         {
             "name": "symfony/asset",
@@ -7330,76 +7356,76 @@
                 },
                 {
                     "url": "https://github.com/fabpot",
-                  "type": "github"
+                    "type": "github"
                 },
-              {
-                "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                "type": "tidelift"
-              }
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
             ],
-          "time": "2022-04-15T14:25:02+00:00"
+            "time": "2022-04-15T14:25:02+00:00"
         },
-    {
-      "name": "symfonycasts/reset-password-bundle",
-      "version": "v1.13.0",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/SymfonyCasts/reset-password-bundle.git",
-        "reference": "6e926da7fb2031ef38a385a994ea3a52b436dc8c"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/SymfonyCasts/reset-password-bundle/zipball/6e926da7fb2031ef38a385a994ea3a52b436dc8c",
-        "reference": "6e926da7fb2031ef38a385a994ea3a52b436dc8c",
-        "shasum": ""
-      },
-      "require": {
-        "php": ">=7.2.5",
-        "symfony/config": "^4.4 | ^5.0 | ^6.0",
-        "symfony/dependency-injection": "^4.4 | ^5.0 | ^6.0",
-        "symfony/deprecation-contracts": "^2.2 | ^3.0",
-        "symfony/http-kernel": "^4.4 | ^5.0 | ^6.0"
-      },
-      "conflict": {
-        "doctrine/orm": "<2.7",
-        "symfony/framework-bundle": "<4.4",
-        "symfony/http-foundation": "<4.4"
-      },
-      "require-dev": {
-        "doctrine/doctrine-bundle": "^2.0.3",
-        "doctrine/orm": "^2.7",
-        "symfony/framework-bundle": "^4.4 | ^5.0 | ^6.0",
-        "symfony/phpunit-bridge": "^5.0 | ^6.0",
-        "vimeo/psalm": "^4.3"
-      },
-      "type": "symfony-bundle",
-      "autoload": {
-        "psr-4": {
-          "SymfonyCasts\\Bundle\\ResetPassword\\": "src/"
-        }
-      },
-      "notification-url": "https://packagist.org/downloads/",
-      "license": [
-        "MIT"
-      ],
-      "description": "Symfony bundle that adds password reset functionality.",
-      "support": {
-        "issues": "https://github.com/SymfonyCasts/reset-password-bundle/issues",
-        "source": "https://github.com/SymfonyCasts/reset-password-bundle/tree/v1.13.0"
-      },
-      "time": "2022-02-23T14:48:27+00:00"
-    },
-    {
-      "name": "twig/extra-bundle",
-      "version": "v3.4.0",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/twigphp/twig-extra-bundle.git",
-        "reference": "2e58256b0e9fe52f30149347c0547e4633304765"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/twigphp/twig-extra-bundle/zipball/2e58256b0e9fe52f30149347c0547e4633304765",
+        {
+            "name": "symfonycasts/reset-password-bundle",
+            "version": "v1.13.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SymfonyCasts/reset-password-bundle.git",
+                "reference": "6e926da7fb2031ef38a385a994ea3a52b436dc8c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SymfonyCasts/reset-password-bundle/zipball/6e926da7fb2031ef38a385a994ea3a52b436dc8c",
+                "reference": "6e926da7fb2031ef38a385a994ea3a52b436dc8c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/config": "^4.4 | ^5.0 | ^6.0",
+                "symfony/dependency-injection": "^4.4 | ^5.0 | ^6.0",
+                "symfony/deprecation-contracts": "^2.2 | ^3.0",
+                "symfony/http-kernel": "^4.4 | ^5.0 | ^6.0"
+            },
+            "conflict": {
+                "doctrine/orm": "<2.7",
+                "symfony/framework-bundle": "<4.4",
+                "symfony/http-foundation": "<4.4"
+            },
+            "require-dev": {
+                "doctrine/doctrine-bundle": "^2.0.3",
+                "doctrine/orm": "^2.7",
+                "symfony/framework-bundle": "^4.4 | ^5.0 | ^6.0",
+                "symfony/phpunit-bridge": "^5.0 | ^6.0",
+                "vimeo/psalm": "^4.3"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "SymfonyCasts\\Bundle\\ResetPassword\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Symfony bundle that adds password reset functionality.",
+            "support": {
+                "issues": "https://github.com/SymfonyCasts/reset-password-bundle/issues",
+                "source": "https://github.com/SymfonyCasts/reset-password-bundle/tree/v1.13.0"
+            },
+            "time": "2022-02-23T14:48:27+00:00"
+        },
+        {
+            "name": "twig/extra-bundle",
+            "version": "v3.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twigphp/twig-extra-bundle.git",
+                "reference": "2e58256b0e9fe52f30149347c0547e4633304765"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twigphp/twig-extra-bundle/zipball/2e58256b0e9fe52f30149347c0547e4633304765",
                 "reference": "2e58256b0e9fe52f30149347c0547e4633304765",
                 "shasum": ""
             },
@@ -7604,239 +7630,239 @@
         }
     ],
     "packages-dev": [
-      {
-        "name": "doctrine/data-fixtures",
-        "version": "1.5.3",
-        "source": {
-          "type": "git",
-          "url": "https://github.com/doctrine/data-fixtures.git",
-          "reference": "ba37bfb776de763c5bf04a36d074cd5f5a083c42"
+        {
+            "name": "doctrine/data-fixtures",
+            "version": "1.5.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/data-fixtures.git",
+                "reference": "ba37bfb776de763c5bf04a36d074cd5f5a083c42"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/data-fixtures/zipball/ba37bfb776de763c5bf04a36d074cd5f5a083c42",
+                "reference": "ba37bfb776de763c5bf04a36d074cd5f5a083c42",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/common": "^2.13|^3.0",
+                "doctrine/persistence": "^1.3.3|^2.0|^3.0",
+                "php": "^7.2 || ^8.0"
+            },
+            "conflict": {
+                "doctrine/dbal": "<2.13",
+                "doctrine/phpcr-odm": "<1.3.0"
+            },
+            "require-dev": {
+                "doctrine/coding-standard": "^9.0",
+                "doctrine/dbal": "^2.13 || ^3.0",
+                "doctrine/mongodb-odm": "^1.3.0 || ^2.0.0",
+                "doctrine/orm": "^2.7.0",
+                "ext-sqlite3": "*",
+                "jangregor/phpstan-prophecy": "^1",
+                "phpstan/phpstan": "^1.5",
+                "phpunit/phpunit": "^8.5 || ^9.5",
+                "symfony/cache": "^5.0 || ^6.0",
+                "vimeo/psalm": "^4.10"
+            },
+            "suggest": {
+                "alcaeus/mongo-php-adapter": "For using MongoDB ODM 1.3 with PHP 7 (deprecated)",
+                "doctrine/mongodb-odm": "For loading MongoDB ODM fixtures",
+                "doctrine/orm": "For loading ORM fixtures",
+                "doctrine/phpcr-odm": "For loading PHPCR ODM fixtures"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Doctrine\\Common\\DataFixtures\\": "lib/Doctrine/Common/DataFixtures"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                }
+            ],
+            "description": "Data Fixtures for all Doctrine Object Managers",
+            "homepage": "https://www.doctrine-project.org",
+            "keywords": [
+                "database"
+            ],
+            "support": {
+                "issues": "https://github.com/doctrine/data-fixtures/issues",
+                "source": "https://github.com/doctrine/data-fixtures/tree/1.5.3"
+            },
+            "funding": [
+                {
+                    "url": "https://www.doctrine-project.org/sponsorship.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.patreon.com/phpdoctrine",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Fdata-fixtures",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-04-19T10:01:44+00:00"
         },
-        "dist": {
-          "type": "zip",
-          "url": "https://api.github.com/repos/doctrine/data-fixtures/zipball/ba37bfb776de763c5bf04a36d074cd5f5a083c42",
-          "reference": "ba37bfb776de763c5bf04a36d074cd5f5a083c42",
-          "shasum": ""
+        {
+            "name": "doctrine/doctrine-fixtures-bundle",
+            "version": "3.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/DoctrineFixturesBundle.git",
+                "reference": "601988c5b46dbd20a0f886f967210aba378a6fd5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/DoctrineFixturesBundle/zipball/601988c5b46dbd20a0f886f967210aba378a6fd5",
+                "reference": "601988c5b46dbd20a0f886f967210aba378a6fd5",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/data-fixtures": "^1.3",
+                "doctrine/doctrine-bundle": "^1.11|^2.0",
+                "doctrine/orm": "^2.6.0",
+                "doctrine/persistence": "^1.3.7|^2.0|^3.0",
+                "php": "^7.1 || ^8.0",
+                "symfony/config": "^3.4|^4.3|^5.0|^6.0",
+                "symfony/console": "^3.4|^4.3|^5.0|^6.0",
+                "symfony/dependency-injection": "^3.4.47|^4.3|^5.0|^6.0",
+                "symfony/doctrine-bridge": "^3.4|^4.1|^5.0|^6.0",
+                "symfony/http-kernel": "^3.4|^4.3|^5.0|^6.0"
+            },
+            "require-dev": {
+                "doctrine/coding-standard": "^9",
+                "phpstan/phpstan": "^1.4.10",
+                "phpunit/phpunit": "^7.5.20 || ^8.5.26 || ^9.5.20",
+                "symfony/phpunit-bridge": "^6.0.8",
+                "vimeo/psalm": "^4.22"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "Doctrine\\Bundle\\FixturesBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Doctrine Project",
+                    "homepage": "https://www.doctrine-project.org"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony DoctrineFixturesBundle",
+            "homepage": "https://www.doctrine-project.org",
+            "keywords": [
+                "Fixture",
+                "persistence"
+            ],
+            "support": {
+                "issues": "https://github.com/doctrine/DoctrineFixturesBundle/issues",
+                "source": "https://github.com/doctrine/DoctrineFixturesBundle/tree/3.4.2"
+            },
+            "funding": [
+                {
+                    "url": "https://www.doctrine-project.org/sponsorship.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.patreon.com/phpdoctrine",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Fdoctrine-fixtures-bundle",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-04-28T17:58:29+00:00"
         },
-        "require": {
-          "doctrine/common": "^2.13|^3.0",
-          "doctrine/persistence": "^1.3.3|^2.0|^3.0",
-          "php": "^7.2 || ^8.0"
+        {
+            "name": "fzaninotto/faker",
+            "version": "v1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fzaninotto/Faker.git",
+                "reference": "d0190b156bcca848d401fb80f31f504f37141c8d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/d0190b156bcca848d401fb80f31f504f37141c8d",
+                "reference": "d0190b156bcca848d401fb80f31f504f37141c8d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "~1.5"
+            },
+            "suggest": {
+                "ext-intl": "*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Faker\\": "src/Faker/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Zaninotto"
+                }
+            ],
+            "description": "Faker is a PHP library that generates fake data for you.",
+            "keywords": [
+                "data",
+                "faker",
+                "fixtures"
+            ],
+            "support": {
+                "issues": "https://github.com/fzaninotto/Faker/issues",
+                "source": "https://github.com/fzaninotto/Faker/tree/master"
+            },
+            "abandoned": true,
+            "time": "2015-05-29T06:29:14+00:00"
         },
-        "conflict": {
-          "doctrine/dbal": "<2.13",
-          "doctrine/phpcr-odm": "<1.3.0"
-        },
-        "require-dev": {
-          "doctrine/coding-standard": "^9.0",
-          "doctrine/dbal": "^2.13 || ^3.0",
-          "doctrine/mongodb-odm": "^1.3.0 || ^2.0.0",
-          "doctrine/orm": "^2.7.0",
-          "ext-sqlite3": "*",
-          "jangregor/phpstan-prophecy": "^1",
-          "phpstan/phpstan": "^1.5",
-          "phpunit/phpunit": "^8.5 || ^9.5",
-          "symfony/cache": "^5.0 || ^6.0",
-          "vimeo/psalm": "^4.10"
-        },
-        "suggest": {
-          "alcaeus/mongo-php-adapter": "For using MongoDB ODM 1.3 with PHP 7 (deprecated)",
-          "doctrine/mongodb-odm": "For loading MongoDB ODM fixtures",
-          "doctrine/orm": "For loading ORM fixtures",
-          "doctrine/phpcr-odm": "For loading PHPCR ODM fixtures"
-        },
-        "type": "library",
-        "autoload": {
-          "psr-4": {
-            "Doctrine\\Common\\DataFixtures\\": "lib/Doctrine/Common/DataFixtures"
-          }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-          "MIT"
-        ],
-        "authors": [
-          {
-            "name": "Jonathan Wage",
-            "email": "jonwage@gmail.com"
-          }
-        ],
-        "description": "Data Fixtures for all Doctrine Object Managers",
-        "homepage": "https://www.doctrine-project.org",
-        "keywords": [
-          "database"
-        ],
-        "support": {
-          "issues": "https://github.com/doctrine/data-fixtures/issues",
-          "source": "https://github.com/doctrine/data-fixtures/tree/1.5.3"
-        },
-        "funding": [
-          {
-            "url": "https://www.doctrine-project.org/sponsorship.html",
-            "type": "custom"
-          },
-          {
-            "url": "https://www.patreon.com/phpdoctrine",
-            "type": "patreon"
-          },
-          {
-            "url": "https://tidelift.com/funding/github/packagist/doctrine%2Fdata-fixtures",
-            "type": "tidelift"
-          }
-        ],
-        "time": "2022-04-19T10:01:44+00:00"
-      },
-      {
-        "name": "doctrine/doctrine-fixtures-bundle",
-        "version": "3.4.2",
-        "source": {
-          "type": "git",
-          "url": "https://github.com/doctrine/DoctrineFixturesBundle.git",
-          "reference": "601988c5b46dbd20a0f886f967210aba378a6fd5"
-        },
-        "dist": {
-          "type": "zip",
-          "url": "https://api.github.com/repos/doctrine/DoctrineFixturesBundle/zipball/601988c5b46dbd20a0f886f967210aba378a6fd5",
-          "reference": "601988c5b46dbd20a0f886f967210aba378a6fd5",
-          "shasum": ""
-        },
-        "require": {
-          "doctrine/data-fixtures": "^1.3",
-          "doctrine/doctrine-bundle": "^1.11|^2.0",
-          "doctrine/orm": "^2.6.0",
-          "doctrine/persistence": "^1.3.7|^2.0|^3.0",
-          "php": "^7.1 || ^8.0",
-          "symfony/config": "^3.4|^4.3|^5.0|^6.0",
-          "symfony/console": "^3.4|^4.3|^5.0|^6.0",
-          "symfony/dependency-injection": "^3.4.47|^4.3|^5.0|^6.0",
-          "symfony/doctrine-bridge": "^3.4|^4.1|^5.0|^6.0",
-          "symfony/http-kernel": "^3.4|^4.3|^5.0|^6.0"
-        },
-        "require-dev": {
-          "doctrine/coding-standard": "^9",
-          "phpstan/phpstan": "^1.4.10",
-          "phpunit/phpunit": "^7.5.20 || ^8.5.26 || ^9.5.20",
-          "symfony/phpunit-bridge": "^6.0.8",
-          "vimeo/psalm": "^4.22"
-        },
-        "type": "symfony-bundle",
-        "autoload": {
-          "psr-4": {
-            "Doctrine\\Bundle\\FixturesBundle\\": ""
-          }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-          "MIT"
-        ],
-        "authors": [
-          {
-            "name": "Fabien Potencier",
-            "email": "fabien@symfony.com"
-          },
-          {
-            "name": "Doctrine Project",
-            "homepage": "https://www.doctrine-project.org"
-          },
-          {
-            "name": "Symfony Community",
-            "homepage": "https://symfony.com/contributors"
-          }
-        ],
-        "description": "Symfony DoctrineFixturesBundle",
-        "homepage": "https://www.doctrine-project.org",
-        "keywords": [
-          "Fixture",
-          "persistence"
-        ],
-        "support": {
-          "issues": "https://github.com/doctrine/DoctrineFixturesBundle/issues",
-          "source": "https://github.com/doctrine/DoctrineFixturesBundle/tree/3.4.2"
-        },
-        "funding": [
-          {
-            "url": "https://www.doctrine-project.org/sponsorship.html",
-            "type": "custom"
-          },
-          {
-            "url": "https://www.patreon.com/phpdoctrine",
-            "type": "patreon"
-          },
-          {
-            "url": "https://tidelift.com/funding/github/packagist/doctrine%2Fdoctrine-fixtures-bundle",
-            "type": "tidelift"
-          }
-        ],
-        "time": "2022-04-28T17:58:29+00:00"
-      },
-      {
-        "name": "fzaninotto/faker",
-        "version": "v1.5.0",
-        "source": {
-          "type": "git",
-          "url": "https://github.com/fzaninotto/Faker.git",
-          "reference": "d0190b156bcca848d401fb80f31f504f37141c8d"
-        },
-        "dist": {
-          "type": "zip",
-          "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/d0190b156bcca848d401fb80f31f504f37141c8d",
-          "reference": "d0190b156bcca848d401fb80f31f504f37141c8d",
-          "shasum": ""
-        },
-        "require": {
-          "php": ">=5.3.3"
-        },
-        "require-dev": {
-          "phpunit/phpunit": "~4.0",
-          "squizlabs/php_codesniffer": "~1.5"
-        },
-        "suggest": {
-          "ext-intl": "*"
-        },
-        "type": "library",
-        "extra": {
-          "branch-alias": {
-            "dev-master": "1.5.x-dev"
-          }
-        },
-        "autoload": {
-          "psr-4": {
-            "Faker\\": "src/Faker/"
-          }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-          "MIT"
-        ],
-        "authors": [
-          {
-            "name": "François Zaninotto"
-          }
-        ],
-        "description": "Faker is a PHP library that generates fake data for you.",
-        "keywords": [
-          "data",
-          "faker",
-          "fixtures"
-        ],
-        "support": {
-          "issues": "https://github.com/fzaninotto/Faker/issues",
-          "source": "https://github.com/fzaninotto/Faker/tree/master"
-        },
-        "abandoned": true,
-        "time": "2015-05-29T06:29:14+00:00"
-      },
-      {
-        "name": "nikic/php-parser",
-        "version": "v4.14.0",
-        "source": {
-          "type": "git",
-          "url": "https://github.com/nikic/PHP-Parser.git",
-          "reference": "34bea19b6e03d8153165d8f30bba4c3be86184c1"
-        },
-        "dist": {
-          "type": "zip",
-          "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/34bea19b6e03d8153165d8f30bba4c3be86184c1",
+        {
+            "name": "nikic/php-parser",
+            "version": "v4.14.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nikic/PHP-Parser.git",
+                "reference": "34bea19b6e03d8153165d8f30bba4c3be86184c1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/34bea19b6e03d8153165d8f30bba4c3be86184c1",
                 "reference": "34bea19b6e03d8153165d8f30bba4c3be86184c1",
                 "shasum": ""
             },

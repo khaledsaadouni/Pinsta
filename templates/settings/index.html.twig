@@ -1,0 +1,64 @@
+{% extends 'layout.html.twig' %}
+{%block title %} post {% endblock %}
+{% block main %}
+    {{ form_start(form) }}
+    <div class="container">
+        <div class="row gutters" style="border-radius: 1rem;box-shadow: 0  15px 20px 0 rgba(0, 0, 0, 0.5);">
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12"  >
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="account-settings">
+                            <div class="user-profile">
+                                <div class="user-avatar">
+                                    <br><br><br><br>  <br><br><br><br>
+                                    <img src="{{asset("upload/pdp/"~app.user.pdp ) }}" class="mt-neg100 mb-4 rounded-circle" width="200" height="200" alt="pfp"
+                                         style="object-fit: cover;">
+
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <label for="inputUsername" style="color: black;font-size: large;"> {{ form_label(form.Profile_Picture) }}:</label>
+                                {{ form_widget(form.Profile_Picture) }} </div>
+                                <div class="form-outline mb-4">
+                                    <label for="inputUsername" style="color: black;font-size: large;"> {{ form_label(form.Cover_Picture) }}:</label>
+                                {{ form_widget(form.Cover_Picture) }}</div>
+                                <a href="{{ path('app_reset',{'id':app.user.id}) }}"><i class="bi bi-key"></i>Reset Password?</a>
+                                <br>
+                                <a href="{{ path('app_confirm') }}"><i class="bi bi-person-x"></i>Delete account?</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12"  >
+                <div class="card h-100">
+                    <div class="card-body">
+
+
+                                <h6 class="mb-2 text-primary"><i class="bi bi-person"></i> Personal Details</h6> <br>
+                        <div class="form-outline mb-4">
+                            <label for="inputUsername" style="color: black;font-size: large;">
+                            {{ form_label(form.Username) }}:</label>
+                        {{ form_widget(form.Username) }}</div>
+                        <div class="form-outline mb-4">
+                            <label for="inputUsername" style="color: black;font-size: large;">  {{ form_label(form.Bio) }}:</label>
+                        {{ form_widget(form.Bio) }}</div>
+                        <div class="form-outline mb-4">
+                            <label for="inputUsername" style="color: black;font-size: large;">   {{ form_label(form.Email) }}:</label>
+                        {{ form_widget(form.Email) }}</div>
+                        <div class="form-outline mb-4">
+                            <label for="inputUsername" style="color: black;font-size: large;">   {{ form_label(form.Name) }}:</label>
+                        {{ form_widget(form.Name) }}</div>
+                        <div class="form-outline mb-4">
+                            <label for="inputUsername" style="color: black;font-size: large;">  {{ form_label(form.Firstname) }}:</label>
+                        {{ form_widget(form.Firstname) }}</div>
+                        <div class="form-outline mb-4">
+                            <label for="inputUsername" style="color: black;font-size: large;">     {{ form_label(form.Country) }} :</label><br>
+                        {{ form_widget(form.Country) }}</div>
+                        {{ form_rest(form)}}
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
